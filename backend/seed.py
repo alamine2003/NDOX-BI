@@ -2,8 +2,13 @@
 
 static_params alimente le moteur (engine.py) : seuils, vulnerabilite,
 reference de vidange, surface de la nappe d'eau stagnante, etc.
-Ces valeurs sont calibrees pour la demo (voir simulate.py pour le
-scenario keur_massar_j0_j10 qui pilote P07).
+
+L'etat de repos (avant tout /readings ou /simulate) doit rester "vert"
+(RAS) partout, conformement a A.4 : NDOX BI mesure l'age de l'eau,
+donc un point sans eau presente ne doit avoir ni stagnation ni indice
+paludisme. Seuls P04/P05 (remontee de nappe, type D) ont de l'eau en
+permanence par construction. P07 est pilote par le scenario
+keur_massar_j0_j10 (voir simulate.py) pour la demo.
 """
 
 POINTS_SEED = [
@@ -15,7 +20,7 @@ POINTS_SEED = [
             "seuil_cm": 30, "vulnerabilite": 0.3, "vidange_reference": 3.0,
             "surface_m2": 80, "presence_dechets": True, "monte_sans_pluie": False,
         },
-        "initial": {"water_cm": 4.0, "temp_c": 27.0, "drain_rate_cmh": 3.0},
+        "initial": {"water_cm": 0.0, "temp_c": 27.0, "drain_rate_cmh": 3.0},
     },
     {
         "id": "P02", "name": "Keur Massar — Marché",
@@ -25,7 +30,7 @@ POINTS_SEED = [
             "seuil_cm": 35, "vulnerabilite": 0.4, "vidange_reference": 2.5,
             "surface_m2": 120, "presence_dechets": True, "monte_sans_pluie": False,
         },
-        "initial": {"water_cm": 6.0, "temp_c": 27.5, "drain_rate_cmh": 1.0},
+        "initial": {"water_cm": 0.0, "temp_c": 27.5, "drain_rate_cmh": 1.0},
     },
     {
         "id": "P03", "name": "Thiaroye — École Élém. 3",
@@ -35,7 +40,7 @@ POINTS_SEED = [
             "seuil_cm": 25, "vulnerabilite": 0.9, "vidange_reference": 2.0,
             "surface_m2": 60, "presence_dechets": False, "monte_sans_pluie": False,
         },
-        "initial": {"water_cm": 3.0, "temp_c": 27.0, "drain_rate_cmh": 0.8},
+        "initial": {"water_cm": 0.0, "temp_c": 27.0, "drain_rate_cmh": 0.8},
     },
     {
         "id": "P04", "name": "Guédiawaye — Cité Sotiba",
@@ -65,7 +70,7 @@ POINTS_SEED = [
             "seuil_cm": 40, "vulnerabilite": 0.3, "vidange_reference": 4.0,
             "surface_m2": 200, "presence_dechets": True, "monte_sans_pluie": False,
         },
-        "initial": {"water_cm": 10.0, "temp_c": 27.5, "drain_rate_cmh": 0.1},
+        "initial": {"water_cm": 0.0, "temp_c": 27.5, "drain_rate_cmh": 0.1},
     },
     {
         "id": "P07", "name": "Keur Massar — Rue 12",
@@ -75,7 +80,7 @@ POINTS_SEED = [
             "seuil_cm": 30, "vulnerabilite": 0.4, "vidange_reference": 3.0,
             "surface_m2": 90, "presence_dechets": True, "monte_sans_pluie": False,
         },
-        "initial": {"water_cm": 3.0, "temp_c": 27.0, "drain_rate_cmh": 3.0},
+        "initial": {"water_cm": 0.0, "temp_c": 27.0, "drain_rate_cmh": 3.0},
     },
     {
         "id": "P08", "name": "Yeumbeul Sud — Canal",
@@ -85,6 +90,6 @@ POINTS_SEED = [
             "seuil_cm": 35, "vulnerabilite": 0.35, "vidange_reference": 2.8,
             "surface_m2": 100, "presence_dechets": True, "monte_sans_pluie": False,
         },
-        "initial": {"water_cm": 5.0, "temp_c": 27.0, "drain_rate_cmh": 1.0},
+        "initial": {"water_cm": 0.0, "temp_c": 27.0, "drain_rate_cmh": 1.0},
     },
 ]
