@@ -31,7 +31,7 @@
     [ "esp32:25", "led_g:A", "green", [ "v0" ] ],
     [ "esp32:26", "led_y:A", "yellow", [ "v0" ] ],
     [ "esp32:27", "led_r:A", "red", [ "v0" ] ],
-    [ "esp32:GND.4", "buzzer:1", "black", [ "v0" ] ],
+    [ "esp32:GND.3", "buzzer:1", "black", [ "v0" ] ],
     [ "esp32:33", "buzzer:2", "purple", [ "v0" ] ]
   ],
   "dependencies": {}
