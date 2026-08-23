@@ -1,0 +1,23 @@
+{
+  "api_base": "http://localhost:8000/api/v1",
+  "point_id": "P07",
+  "borne_id": "BORNE-01",
+  "poll_seconds": 30,
+  "http_timeout": 3,
+  "alert_cooldown_min": 15,
+  "report_cooldown_min": 15,
+  "record_seconds": 5,
+  "min_report_seconds": 1.5,
+  "silence_rms_threshold": 300,
+  "aplay_device": "pulse",
+  "arecord_device": "default",
+  "audio_dir": "audio",
+  "gpio": {
+    "btn_blue": 17,
+    "btn_red": 27,
+    "led_green": 22,
+    "led_yellow": 23,
+    "led_red": 24,
+    "led_blue": 25
+  }
+}

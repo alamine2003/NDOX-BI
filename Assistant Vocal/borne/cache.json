@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-08-23T14:32:05Z",
+  "sim_day": 0,
+  "_note": "Seed J0 du scenario de demo. Ce fichier est ecrase a chaque appel reussi de GET /points. Il garantit que la borne parle meme si le backend n a jamais repondu.",
+  "points": [
+    {
+      "id": "P01", "name": "Yeumbeul Nord — Rue 12",
+      "lat": 14.7761, "lng": -17.3612, "population_exposee": 1400,
+      "water_cm": 8.0, "temp_c": 28.9, "stagnation_days": 1,
+      "flood_index": 0.18, "flood_level": "vert",
+      "malaria_index": 0.12, "malaria_level": "vert",
+      "days_to_emergence": null, "type": "A",
+      "drain_rate_cmh": 3.0, "drain_rate_baseline_cmh": 3.0,
+      "advice_key": "flood_green", "updated_at": "2026-08-23T14:32:05Z"
+    },
+    {
+      "id": "P02", "name": "Keur Massar — Marché",
+      "lat": 14.7789, "lng": -17.3204, "population_exposee": 2100,
+      "water_cm": 24.0, "temp_c": 29.1, "stagnation_days": 4,
+      "flood_index": 0.44, "flood_level": "jaune",
+      "malaria_index": 0.52, "malaria_level": "jaune",
+      "days_to_emergence": 3.4, "type": "B",
+      "drain_rate_cmh": 1.8, "drain_rate_baseline_cmh": 4.0,
+      "advice_key": "malaria_yellow", "updated_at": "2026-08-23T14:32:05Z"
+    },
+    {
+      "id": "P03", "name": "Thiaroye — École Élém. 3",
+      "lat": 14.7550, "lng": -17.3670, "population_exposee": 900,
+      "water_cm": 15.0, "temp_c": 28.6, "stagnation_days": 2,
+      "flood_index": 0.31, "flood_level": "vert",
+      "malaria_index": 0.28, "malaria_level": "vert",
+      "days_to_emergence": 6.1, "type": "B",
+      "drain_rate_cmh": 2.2, "drain_rate_baseline_cmh": 3.8,
+      "advice_key": "flood_green", "updated_at": "2026-08-23T14:32:05Z"
+    },
+    {
+      "id": "P04", "name": "Guédiawaye — Cité Sotiba",
+      "lat": 14.7742, "lng": -17.3945, "population_exposee": 1800,
+      "water_cm": 31.0, "temp_c": 29.3, "stagnation_days": 26,
+      "flood_index": 0.49, "flood_level": "jaune",
+      "malaria_index": 0.78, "malaria_level": "rouge",
+      "days_to_emergence": 0, "type": "D",
+      "drain_rate_cmh": 0.1, "drain_rate_baseline_cmh": 0.1,
+      "advice_key": "malaria_red", "updated_at": "2026-08-23T14:32:05Z"
+    },
+    {
+      "id": "P05", "name": "Pikine — Poste de santé",
+      "lat": 14.7550, "lng": -17.3910, "population_exposee": 1100,
+      "water_cm": 27.0, "temp_c": 29.0, "stagnation_days": 23,
+      "flood_index": 0.46, "flood_level": "jaune",
+      "malaria_index": 0.71, "malaria_level": "rouge",
+      "days_to_emergence": 0, "type": "D",
+      "drain_rate_cmh": 0.1, "drain_rate_baseline_cmh": 0.1,
+      "advice_key": "malaria_red", "updated_at": "2026-08-23T14:32:05Z"
+    },
+    {
+      "id": "P06", "name": "Malika — Bas-fond Est",
+      "lat": 14.7930, "lng": -17.3350, "population_exposee": 600,
+      "water_cm": 19.0, "temp_c": 29.6, "stagnation_days": 9,
+      "flood_index": 0.36, "flood_level": "jaune",
+      "malaria_index": 0.66, "malaria_level": "rouge",
+      "days_to_emergence": 0, "type": "C",
+      "drain_rate_cmh": 0.15, "drain_rate_baseline_cmh": 0.2,
+      "advice_key": "malaria_red", "updated_at": "2026-08-23T14:32:05Z"
+    },
+    {
+      "id": "P07", "name": "Keur Massar — Rue 12",
+      "lat": 14.7801, "lng": -17.3180, "population_exposee": 1200,
+      "_note": "72 cm et non 42,5 comme dans l example du contrat : les seuils vocaux commencent a 50 cm, une valeur a 42,5 ne declencherait aucun message. A aligner avec P2 et P4.",
+      "water_cm": 72.0, "temp_c": 29.4, "stagnation_days": 0,
+      "flood_index": 0.81, "flood_level": "rouge",
+      "malaria_index": 0.10, "malaria_level": "vert",
+      "days_to_emergence": null, "type": "A",
+      "drain_rate_cmh": 3.1, "drain_rate_baseline_cmh": 3.0,
+      "rain_forecast_24h_mm": 55.0, "rise_rate_cmh": 18.0,
+      "blockage_confirmed": false, "treated": false,
+      "advice_key": "flood_urgent_70", "updated_at": "2026-08-23T14:32:05Z"
+    },
+    {
+      "id": "P08", "name": "Yeumbeul Sud — Canal",
+      "lat": 14.7690, "lng": -17.3560, "population_exposee": 1500,
+      "water_cm": 12.0, "temp_c": 28.8, "stagnation_days": 3,
+      "flood_index": 0.27, "flood_level": "vert",
+      "malaria_index": 0.34, "malaria_level": "jaune",
+      "days_to_emergence": 4.8, "type": "B",
+      "drain_rate_cmh": 1.6, "drain_rate_baseline_cmh": 3.6,
+      "advice_key": "malaria_yellow", "updated_at": "2026-08-23T14:32:05Z"
+    }
+  ]
+}

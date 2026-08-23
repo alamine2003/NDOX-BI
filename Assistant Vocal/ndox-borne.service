@@ -1,0 +1,23 @@
+[Unit]
+Description=NDOX BI — Borne Yëgle (borne vocale de quartier)
+After=network.target sound.target bluetooth.target
+# La borne prend la main sur l'audio AVANT l'assistant EVA : les deux
+# partagent le même haut-parleur Bluetooth et le même micro, et ne peuvent
+# pas tourner en même temps sans se couper la parole.
+Before=eva.service
+Conflicts=eva.service
+
+[Service]
+Type=simple
+User=eva
+WorkingDirectory=/home/eva/ndox/borne
+EnvironmentFile=-/etc/default/ndox-borne
+ExecStartPre=/bin/bash /home/eva/ndox/scripts/audio_setup.sh
+ExecStart=/usr/bin/python3 /home/eva/ndox/borne/borne.py
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+Environment=PULSE_RUNTIME_PATH=/run/user/1000/pulse
+
+[Install]
+WantedBy=multi-user.target
