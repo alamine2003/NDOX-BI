@@ -1,3 +1,5 @@
+import { ClockIcon } from "./icons";
+
 export default function DaySlider({
   day,
   onChange,
@@ -8,7 +10,9 @@ export default function DaySlider({
   return (
     <div className="card slider-card">
       <div className="slider-row">
-        <label htmlFor="day-range">JOUR</label>
+        <label htmlFor="day-range">
+          <ClockIcon size={16} /> Jour
+        </label>
         <input
           id="day-range"
           type="range"

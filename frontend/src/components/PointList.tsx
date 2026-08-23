@@ -1,5 +1,6 @@
 import type { Point } from "../types";
 import { COLOR } from "../data/seed";
+import { UsersIcon } from "./icons";
 
 const ORDER: Record<string, number> = { rouge: 0, jaune: 1, vert: 2 };
 
@@ -23,7 +24,10 @@ export default function PointList({
         >
           <span className="dot" style={{ background: COLOR[p.flood_level] }} />
           <span className="pname">{p.name}</span>
-          <span className="ppop">{p.population_exposee.toLocaleString("fr-FR")} hab.</span>
+          <span className="ppop">
+            <UsersIcon size={13} />
+            {p.population_exposee.toLocaleString("fr-FR")}
+          </span>
         </div>
       ))}
     </div>

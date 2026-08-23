@@ -1,9 +1,10 @@
 import type { ScreenId } from "../types";
+import { ChartIcon, MapPinIcon, PhoneIcon } from "./icons";
 
-const TABS: { id: ScreenId; label: string }[] = [
-  { id: "dashboard", label: "Écran mairie" },
-  { id: "ivr", label: "Téléphone (IVR)" },
-  { id: "compare", label: "Avec / Sans" },
+const TABS: { id: ScreenId; label: string; Icon: typeof MapPinIcon }[] = [
+  { id: "dashboard", label: "Écran mairie", Icon: MapPinIcon },
+  { id: "ivr", label: "Téléphone (IVR)", Icon: PhoneIcon },
+  { id: "compare", label: "Avec / Sans", Icon: ChartIcon },
 ];
 
 export default function TabBar({
@@ -15,13 +16,10 @@ export default function TabBar({
 }) {
   return (
     <nav className="tabbar">
-      {TABS.map((tab) => (
-        <button
-          key={tab.id}
-          className={active === tab.id ? "active" : ""}
-          onClick={() => onChange(tab.id)}
-        >
-          {tab.label}
+      {TABS.map(({ id, label, Icon }) => (
+        <button key={id} className={active === id ? "active" : ""} onClick={() => onChange(id)}>
+          <Icon size={19} />
+          {label}
         </button>
       ))}
     </nav>

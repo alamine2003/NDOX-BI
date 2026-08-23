@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ChartIcon } from "./icons";
 
 export default function CompareScreen() {
   const [launched, setLaunched] = useState(false);
@@ -43,19 +44,22 @@ export default function CompareScreen() {
       </table>
 
       <button className="compare-launch" onClick={launch}>
+        <ChartIcon size={18} />
         Lancer la comparaison
       </button>
 
-      <div className="bars">
-        <div className="bar-col sans">
-          <div className="bar-value">45 cm</div>
-          <div className="bar" style={{ height: launched ? 220 : 0 }} />
-          <div className="bar-label">Sans NDOX BI</div>
-        </div>
-        <div className="bar-col avec">
-          <div className="bar-value">18 cm</div>
-          <div className="bar" style={{ height: launched ? 88 : 0 }} />
-          <div className="bar-label">Avec NDOX BI</div>
+      <div className="bars-card">
+        <div className="bars">
+          <div className="bar-col sans">
+            <div className="bar-value">45 cm</div>
+            <div className="bar" style={{ height: launched ? 220 : 0 }} />
+            <div className="bar-label">Sans NDOX BI</div>
+          </div>
+          <div className="bar-col avec">
+            <div className="bar-value">18 cm</div>
+            <div className="bar" style={{ height: launched ? 88 : 0 }} />
+            <div className="bar-label">Avec NDOX BI</div>
+          </div>
         </div>
       </div>
     </section>

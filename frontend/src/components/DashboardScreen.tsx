@@ -3,6 +3,7 @@ import MapView from "./MapView";
 import PointList from "./PointList";
 import PointDetail from "./PointDetail";
 import DaySlider from "./DaySlider";
+import { DropletIcon, PulseIcon } from "./icons";
 
 export default function DashboardScreen({
   points,
@@ -29,10 +30,22 @@ export default function DashboardScreen({
     <section className="screen">
       <div className="alerts-bar">
         <div className="alert-pill flood">
-          {nbFlood} alerte{nbFlood > 1 ? "s" : ""} inondation
+          <span className="icon-badge">
+            <DropletIcon size={22} />
+          </span>
+          <span className="alert-figures">
+            <span className="alert-num">{nbFlood}</span>
+            <span className="alert-label">alerte{nbFlood > 1 ? "s" : ""} inondation</span>
+          </span>
         </div>
         <div className="alert-pill gite">
-          {nbGite} gîte{nbGite > 1 ? "s" : ""} en fenêtre d'or
+          <span className="icon-badge">
+            <PulseIcon size={22} />
+          </span>
+          <span className="alert-figures">
+            <span className="alert-num">{nbGite}</span>
+            <span className="alert-label">gîte{nbGite > 1 ? "s" : ""} en fenêtre d'or</span>
+          </span>
         </div>
       </div>
 
