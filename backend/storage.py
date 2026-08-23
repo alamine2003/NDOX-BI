@@ -41,6 +41,14 @@ class Store:
         self.sim_day = 0
         self._init_points()
 
+    def reset(self):
+        """Reinitialise l'etat en place (utilise par les tests)."""
+        self.points = {}
+        self.reports = []
+        self.curage_sessions = {}
+        self.sim_day = 0
+        self._init_points()
+
     def _init_points(self):
         for seed in POINTS_SEED:
             pid = seed["id"]
