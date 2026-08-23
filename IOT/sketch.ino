@@ -28,6 +28,14 @@
 
 DHT dht(PIN_DHT, DHTTYPE);
 
+// Client TLS persistant : recreer une poignee de main TLS complete a
+// chaque appel coute plusieurs secondes sur ESP32 (mesure via ngrok :
+// ~5s de duree de connexion mediane contre ~5ms de traitement cote
+// backend). En le gardant global et en activant le keep-alive HTTP,
+// la connexion est reutilisee entre les cycles au lieu d'etre
+// renegociee a chaque envoi.
+WiFiClientSecure secureClient;
+
 // Structure pour stocker les données en cas d'échec du réseau (Buffer RAM de 50 places)
 struct Measurement {
   float water_cm;
@@ -52,6 +60,8 @@ void setup() {
   pinMode(PIN_BUZZER, OUTPUT);
 
   dht.begin();
+
+  secureClient.setInsecure(); // pas de verification de certificat — suffisant pour la démo hackathon
 
   Serial.println("Connexion au WiFi de simulation Wokwi...");
   WiFi.begin(ssid, password);
@@ -105,11 +115,9 @@ float getMedianDistance(float temperature) {
 bool sendPostRequest(float water, float temp, String timestamp) {
   if (WiFi.status() != WL_CONNECTED) return false;
 
-  WiFiClientSecure client;
-  client.setInsecure(); // pas de vérification de certificat — suffisant pour la démo hackathon
-
   HTTPClient http;
-  http.begin(client, API_URL);
+  http.begin(secureClient, API_URL);
+  http.setReuse(true); // garde la connexion TLS ouverte entre les requetes
   http.addHeader("Content-Type", "application/json");
 
   // Construction manuelle du JSON UTF-8 sans bibliothèque externe lourde
